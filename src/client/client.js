@@ -1,7 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
+
+import configureStore from './store';
+import './styles/main.scss';
 import App from './App';
 
-import './styles/main.scss';
 
-render(<App />, document.getElementById('app'));
+const store = configureStore();
+
+render(<App store={store} />, document.getElementById('app'));

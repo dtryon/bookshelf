@@ -4,10 +4,13 @@ import { shallow } from 'enzyme';
 
 import App from './index';
 
+import configureStore from '../store';
+
 describe('App', () => {
     it('should render', () => {
-        const wrapper = shallow(<App />);
-        expect(wrapper.contains('hello')).to.be.true;
+        const store = configureStore();
+        const wrapper = shallow(<App store={store}/>);
+        expect(wrapper.contains(<header></header>)).to.be.true;
     });
 });
 
