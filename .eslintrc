@@ -1,0 +1,26 @@
+{
+    "parser": "babel-eslint",
+    "extends": [ "eslint:recommended", "plugin:react/recommended" ],
+    "plugins": ["import"],
+    "globals": {
+      "global": true,
+      "window": true,
+      "document": true,
+      "process": true,
+      "it": true,
+      "xit": true,
+      "describe": true,
+      "beforeEach": true,
+      "afterEach": true,
+      "expect": true,
+      "require": true,
+      "module": true,
+      "enzyme": true,
+      "shallow": true,
+      "mount": true,
+      "sinon": true,
+      "renderer": true,
+      "__filename": true,
+      "Promise": true
+    }
+  }

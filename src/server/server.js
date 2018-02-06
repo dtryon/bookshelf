@@ -4,7 +4,7 @@ const Router = require('koa-router');
 const server = new Koa();
 const router = new Router();
 
-router.get('/api/hello', (ctx, next) => {
+router.get('/api/hello', (ctx) => {
     return ctx.body = 'hi';
 });
 
