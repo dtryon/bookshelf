@@ -1,11 +1,15 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 
+const bookList = require('./booklist/data.json');
+
 const server = new Koa();
 const router = new Router();
 
-router.get('/api/hello', (ctx) => {
-    return ctx.body = 'hi';
+const PORT = process.env.PORT || 8181;
+
+router.get('/api/books', async (ctx) => {
+    ctx.body = bookList;
 });
 
 server.use(router.routes());
@@ -18,5 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     server.use(proxy({ host: 'http://localhost:8080' }));
 }
 
-server.listen(8181);
+const instance = server.listen(PORT);
+
+module.exports = instance;
 
