@@ -31,19 +31,24 @@ export class BookList extends Component {
             : books;
 
         return (
-            <div>
+            <div className="BookList">
                 { loading && <Spinner /> }
                 { !loading && <div>
                     <div>
-                        <input name="books-filter" value={filter} onChange={(e) => changeFilter(e.target.value)}/>
+                        <input
+                            placeholder="filter by author"
+                            name="books-filter"
+                            value={filter}
+                            onChange={e => changeFilter(e.target.value)}
+                        />
                     </div>
                     <ul>
                         { filteredBooks.map(book => {
                             return (
                                 <li key={getBookId(book)}>
-                                    <h2>{ book.title }</h2>
-                                    <h3>{ book.author }</h3>
-                                    <p>{ book.description }</p>
+                                    <h2 className="u-clr-grape"><a href="#">{ book.title }</a></h2>
+                                    <h3 className="u-clr-eggplant">{ book.author }</h3>
+                                    <p className="u-clr-grey5">{ book.description }</p>
                                 </li>
                             );
                         }

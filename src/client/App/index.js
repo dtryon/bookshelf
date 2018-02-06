@@ -12,12 +12,11 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={this.props.store}>
-                <div>
-                    <header></header>
+                <div className="App">
+                    <header><h1 className="u-clr-eggplant">Bookshelf</h1></header>
                     <content>
                         <BookList />
                     </content>
-                    <footer></footer>
                 </div>
             </Provider>
         );
