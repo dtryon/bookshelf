@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { fetchBooks, filterBooks } from '../../actions/books';
 import getBookId from '../lib/getBookId';
@@ -46,7 +47,7 @@ export class BookList extends Component {
                         { filteredBooks.map(book => {
                             return (
                                 <li key={getBookId(book)}>
-                                    <h2 className="u-clr-grape"><a href="#">{ book.title }</a></h2>
+                                    <h2 className="u-clr-grape"><Link to={`/${getBookId(book)}`}>{ book.title }</Link></h2>
                                     <h3 className="u-clr-eggplant">{ book.author }</h3>
                                     <p className="u-clr-grey5">{ book.description }</p>
                                 </li>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+import Routes from './routes';
 import BookList from './components/BookList';
 
 export default class App extends Component {
@@ -12,12 +14,14 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={this.props.store}>
-                <div className="App">
-                    <header><h1 className="u-clr-eggplant">Bookshelf</h1></header>
-                    <content>
-                        <BookList />
-                    </content>
-                </div>
+                <BrowserRouter>
+                    <div className="App">
+                        <header><h1 className="u-clr-eggplant">Bookshelf</h1></header>
+                        <content>
+                            <Routes />
+                        </content>
+                    </div>
+                </BrowserRouter>
             </Provider>
         );
     }
