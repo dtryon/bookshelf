@@ -1,0 +1,27 @@
+{
+    "presets": [
+      ["es2015", { "modules": false }],
+      "es2017",
+      "react",
+      "stage-0"
+    ],
+    "env": {
+      "build" : {
+        "presets": [["es2015", { "modules": false }],
+         "es2017",
+         "react",
+         "stage-0"
+        ],
+        "plugins": [
+          "external-helpers"
+        ]
+      },
+      "test": {
+        "presets": [["es2015"],
+         "es2017",
+         "react",
+         "stage-0"
+        ]
+      }
+    }
+  }
