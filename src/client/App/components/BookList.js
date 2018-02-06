@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 
 import { fetchBooks } from '../../actions/books';
 import getBookId from '../lib/getBookId';
+import Spinner from './Spinner';
 
 export class BookList extends Component {
 
     static propTypes = {
         books: PropTypes.array,
+        loading: PropTypes.bool,
         getBooks: PropTypes.func
     };
 
@@ -17,11 +19,13 @@ export class BookList extends Component {
     }
 
     render() {
-        const { books = [] } = this.props;
+        const { books = [], loading } = this.props;
 
         return (
-            <ul>
-                { books.map(book => {
+            <div>
+                { loading && <Spinner /> }
+                { !loading && <ul>
+                    { books.map(book => {
                         return (
                             <li key={getBookId(book)}>
                                 <h2>{ book.title }</h2>
@@ -30,15 +34,17 @@ export class BookList extends Component {
                             </li>
                         );
                     }
-                )}
-            </ul>
+                    )}
+                </ul> }
+            </div>
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
-        books: state.books.list
+        books: state.books.list,
+        loading: state.books.loading
     };
 };
 
