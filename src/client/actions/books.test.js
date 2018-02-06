@@ -2,8 +2,8 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import proxyquire from 'proxyquire';
 
-import { BOOKS_LOADED, BOOKS_LOADING } from './types';
-import { booksLoaded, booksLoading } from './books';
+import { BOOKS_LOADED, BOOKS_LOADING, BOOKS_FILTER_CHANGED } from './types';
+import { booksLoaded, booksLoading, filterBooks } from './books';
 
 describe('books actions', () => {
 
@@ -26,6 +26,12 @@ describe('books actions', () => {
     it('should create books loading', () => {
         const action = booksLoading();
         expect(action.type).to.equal(BOOKS_LOADING);
+    });
+
+    it('should create filter books', () => {
+        const action = filterBooks('asdf');
+        expect(action.type).to.equal(BOOKS_FILTER_CHANGED);
+        expect(action.filter).to.equal('asdf');
     });
 
     it('should fetch books', async () => {

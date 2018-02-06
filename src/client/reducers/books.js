@@ -1,4 +1,8 @@
-import { BOOKS_LOADED, BOOKS_LOADING } from '../actions/types';
+import {
+  BOOKS_LOADED,
+  BOOKS_LOADING,
+  BOOKS_FILTER_CHANGED
+} from "../actions/types";
 
 export default (state = { results: [] }, action = {}) => {
     switch(action.type) {
@@ -6,12 +10,18 @@ export default (state = { results: [] }, action = {}) => {
             return {
                 ...state,
                 list: action.books,
-                loading: false
+                loading: false,
+                filter: ''
             };
         case BOOKS_LOADING:
             return {
                 ...state,
                 loading: true
+            };
+        case BOOKS_FILTER_CHANGED:
+            return {
+                ...state,
+                filter: action.filter
             };
         default:
             return state;

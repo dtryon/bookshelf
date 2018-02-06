@@ -24,4 +24,11 @@ describe('books reducer', () => {
         expect(state.loading).to.be.false;
     });
 
+    it('BOOKS_FILTER_CHANGED', () => {
+        const initialState = reducer();
+        const action = actions.filterBooks('qwerty');
+        const state = reducer(initialState, action);
+        expect(state.filter).to.equal('qwerty');
+    });
+
 });
