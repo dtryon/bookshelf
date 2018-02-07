@@ -6,7 +6,7 @@ import RanksHistory from './components/RanksHistory';
 
 export default () => (
     <Switch>
-        <Route path="/:bookName" component={RanksHistory} />
+        <Route path="/:bookId" component={RanksHistory} />
         <Route path="*" component={BookList} />
     </Switch>
 );

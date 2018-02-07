@@ -16,6 +16,17 @@ describe('api/books', () => {
             .get('/api/books')
             .end((err, res) => {
                 expect(res.body.results.length).to.equal(20);
+                expect(res).to.be.json;
+                done();
+            });
+    });
+
+    it('should return index.html', (done) => {
+        chai.request(server)
+            .get('/')
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res).to.be.html;
                 done();
             });
     });
