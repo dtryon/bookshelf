@@ -48,6 +48,8 @@ Once the server has started, navigate to http://localhost:8181.
 - Most of the code is has test coverage, but not all.  Again, I was trying to be pragmatic with the time I had.
 - The design is pretty dreadful.  Might work on it a bit more.
 - Uses a skeleton ITCSS type style setup with sass
+- Needs a way to make a production build
+- Needs bundle optimization (making polyfill, react, react-dom external etc)
 
 #### Syntax support
 
