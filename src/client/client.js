@@ -1,3 +1,4 @@
+/* global INITIAL_STATE */
 import React from 'react';
 import { hydrate } from 'react-dom';
 

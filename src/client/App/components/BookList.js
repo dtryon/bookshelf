@@ -18,7 +18,6 @@ export class BookList extends Component {
     };
 
     componentDidMount() {
-        console.log('node again?');
         this.props.getBooks();
     }
 
