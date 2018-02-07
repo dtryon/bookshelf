@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import getBookId from '../lib/getBookId';
 import { fetchBooks } from '../../actions/books';
 
 export class RanksHistory extends Component {
+
+    static propTypes = {
+        book: PropTypes.object,
+        ranksHistory: PropTypes.array,
+        getBooks: PropTypes.func
+    };
 
     componentWillMount() {
         this.props.getBooks();

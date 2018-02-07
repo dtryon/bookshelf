@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import Routes from './routes';
-import BookList from './components/BookList';
 
 export default class App extends Component {
     static propTypes = {

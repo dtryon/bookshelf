@@ -23,6 +23,7 @@
       "sinon": true,
       "renderer": true,
       "__filename": true,
+      "__dirname": true,
       "Promise": true
     }
   }
