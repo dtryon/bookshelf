@@ -10,7 +10,7 @@ describe('App', () => {
     it('should render', () => {
         const store = configureStore();
         const wrapper = shallow(<App store={store}/>);
-        expect(wrapper.find('.App').length).to.equal(1);
+        expect(wrapper.find('BrowserRouter').length).to.equal(1);
     });
 });
 

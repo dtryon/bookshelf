@@ -14,12 +14,7 @@ export default class App extends Component {
         return (
             <Provider store={this.props.store}>
                 <BrowserRouter>
-                    <div className="App">
-                        <header><h1 className="u-clr-eggplant">Bookshelf</h1></header>
-                        <content>
-                            <Routes />
-                        </content>
-                    </div>
+                    <Routes />
                 </BrowserRouter>
             </Provider>
         );
