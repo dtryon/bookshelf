@@ -1,8 +1,8 @@
 const Koa = require('koa');
 const Router = require('koa-router');
-const send = require('koa-send');
 
 const bookList = require('./booklist/data.json');
+const render = require('./views/render');
 
 const server = new Koa();
 const router = new Router();
@@ -22,8 +22,8 @@ router.get('/api/books', ctx => {
     ctx.body = bookList;
 });
 
-router.get('/:bookId?', async ctx => {
-    await send(ctx, 'index.html', { root: __dirname + '/views' });
+router.get('/:bookId?', ctx => {
+    ctx.body = render();
 });
 
 server.use(router.routes());
