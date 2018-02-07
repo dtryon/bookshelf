@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 
 import configureStore from './store';
 import './styles/main.scss';
 import App from './App';
 
 
-const store = configureStore();
+const store = configureStore(INITIAL_STATE || {});
 
-render(<App store={store} />, document.getElementById('app'));
+hydrate(<App store={store} />, document.getElementById('app'));

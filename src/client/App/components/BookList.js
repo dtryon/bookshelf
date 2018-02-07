@@ -17,7 +17,8 @@ export class BookList extends Component {
         changeFilter: PropTypes.func
     };
 
-    componentWillMount() {
+    componentDidMount() {
+        console.log('node again?');
         this.props.getBooks();
     }
 

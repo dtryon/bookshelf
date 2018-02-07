@@ -1,8 +1,8 @@
-const Koa = require('koa');
-const Router = require('koa-router');
+import Koa from 'koa';
+import Router from 'koa-router';
 
-const bookList = require('./booklist/data.json');
-const render = require('./views/render');
+import bookList from './booklist/data.json';
+import render from './views/render';
 
 const server = new Koa();
 const router = new Router();
@@ -23,14 +23,13 @@ router.get('/api/books', ctx => {
 });
 
 router.get('/:bookId?', ctx => {
-    ctx.body = render();
+    ctx.body = render(ctx.originalUrl, bookList);
 });
 
 server.use(router.routes());
 server.use(router.allowedMethods());
 
-
 const instance = server.listen(PORT);
 
-module.exports = instance;
+export default instance;
 

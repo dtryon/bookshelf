@@ -13,7 +13,7 @@ export class RanksHistory extends Component {
         getBooks: PropTypes.func
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getBooks();
     }
 
@@ -39,11 +39,11 @@ export class RanksHistory extends Component {
                         return (
                             <li className="u-bg-shell" key={primary_isbn10 + primary_isbn13}>
                                 { !!display_name && <h3>{ display_name }</h3> }
-                                { !!published_date && <div className="date">Published: { published_date }</div> }
-                                { !!primary_isbn10 && <div className="isbn">ISBN10: { primary_isbn10 }</div> }
-                                { !!primary_isbn13 && <div className="isbn">ISBN13: { primary_isbn13 }</div> }
-                                { !!rank && <div className="rank">Rank: { rank }</div> }
-                                { !!weeks_on_list && <div className="weeks">Weeks on list: { weeks_on_list }</div> }
+                                { !!published_date && <div className="date">{`Published: ${published_date}`}</div> }
+                                { !!primary_isbn10 && <div className="isbn">{`ISBN10: ${ primary_isbn10 }`}</div> }
+                                { !!primary_isbn13 && <div className="isbn">{`ISBN13: ${ primary_isbn13 }`}</div> }
+                                { !!rank && <div className="rank">{`Rank: ${ rank }`}</div> }
+                                { !!weeks_on_list && <div className="weeks">{`Weeks on list: ${ weeks_on_list }`}</div> }
                             </li>
                         );
                     })}
