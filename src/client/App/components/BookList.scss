@@ -1,10 +1,18 @@
 .BookList {
+    .page-title {
+        padding-bottom: $base-spacing-unit;
+    }
+
     ul {
         li {
             padding: $base-spacing-unit-small $base-spacing-unit-small;
             border-bottom: 2px solid $shell;
             list-style-type: none;
         }
+    }
+
+    p {
+        font-size: 0.7rem;
     }
 
     input {

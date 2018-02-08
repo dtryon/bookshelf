@@ -23,31 +23,33 @@ export class RanksHistory extends Component {
         return (
             <div className="RanksHistory">
                 <h2 className="u-clr-eggplant">Rank History</h2>
-                <h3 className="u-clr-grape">{ book.title }</h3>
-                <ul>
-                    { ranksHistory.map(rh => {
+                <div className="page-content">
+                    <h3 className="u-clr-grape">{ book.title }</h3>
+                    <ul>
+                        { ranksHistory.map(rh => {
 
-                        const {
-                            primary_isbn10,
-                            primary_isbn13,
-                            rank,
-                            display_name,
-                            published_date,
-                            weeks_on_list
-                        } = rh;
+                            const {
+                                primary_isbn10,
+                                primary_isbn13,
+                                rank,
+                                display_name,
+                                published_date,
+                                weeks_on_list
+                            } = rh;
 
-                        return (
-                            <li className="u-bg-shell" key={primary_isbn10 + primary_isbn13}>
-                                { !!display_name && <h3>{ display_name }</h3> }
-                                { !!published_date && <div className="date">{`Published: ${published_date}`}</div> }
-                                { !!primary_isbn10 && <div className="isbn">{`ISBN10: ${ primary_isbn10 }`}</div> }
-                                { !!primary_isbn13 && <div className="isbn">{`ISBN13: ${ primary_isbn13 }`}</div> }
-                                { !!rank && <div className="rank">{`Rank: ${ rank }`}</div> }
-                                { !!weeks_on_list && <div className="weeks">{`Weeks on list: ${ weeks_on_list }`}</div> }
-                            </li>
-                        );
-                    })}
-                </ul>
+                            return (
+                                <li key={primary_isbn10 + primary_isbn13}>
+                                    { !!display_name && <h3>{ display_name }</h3> }
+                                    { !!published_date && <div className="date">{`Published: ${published_date}`}</div> }
+                                    { !!primary_isbn10 && <div className="isbn">{`ISBN10: ${ primary_isbn10 }`}</div> }
+                                    { !!primary_isbn13 && <div className="isbn">{`ISBN13: ${ primary_isbn13 }`}</div> }
+                                    { !!rank && <div className="rank">{`Rank: ${ rank }`}</div> }
+                                    { !!weeks_on_list && <div className="weeks">{`Weeks on list: ${ weeks_on_list }`}</div> }
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
         );
     }

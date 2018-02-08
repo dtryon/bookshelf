@@ -1,3 +1,7 @@
 body {
     padding: 0 $base-spacing-unit-large;
+
+    header {
+        border-bottom: 2px solid $eggplant;
+    }
 }
